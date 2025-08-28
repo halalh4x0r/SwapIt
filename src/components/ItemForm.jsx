@@ -12,7 +12,7 @@ function ItemForm(){
             title:title,
             category:category,
             description:description,
-            imageURL:imageURL,
+            image:image,
             price:price
         }
         
@@ -30,7 +30,7 @@ function ItemForm(){
                 return res.json()// here I get a response.json. 
             })
             .then(savedItem=>{//the saved item is the response from server on the newItem we had passed to be posted. 
-                setItems([...items,savedItem])//here we are adding a new item to the current state. 
+                setItems([...items,savedItem])//here we are adding/appening the new item we had saved on dbjsons using post 
             })
         }
        
@@ -40,7 +40,7 @@ function ItemForm(){
         <input value={title} onChange={(e)=>setTitle(e.target.value)}  placeholder="Title"/>
         <input value={category} onChange={(e)=>setCategory(e.target.value)}placeholder="Category"/> 
         <input value={description} onChange={(e)=>setDescription(e.target.value)} placeholder="Description"/> 
-        <input value={imageURL} onChange={(e)=>setimageURL(e.target.value)} placeholder="Image url"/>  
+        <input value={image} onChange={(e)=>setimageURL(e.target.value)} placeholder="Image url"/>  
         <input value={price} onChange={(e)=>setPrice(e.target.value)} placeholder="Price"/>  
         <button type="submit" > Add</button>
         </form>
