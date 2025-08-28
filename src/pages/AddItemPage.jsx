@@ -18,7 +18,7 @@ function AddItemPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/items", {
+    fetch("http://localhost:3001/items", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...formData, price: parseFloat(formData.price) }),
