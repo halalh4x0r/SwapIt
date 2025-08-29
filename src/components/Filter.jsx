@@ -2,31 +2,34 @@ import { useState } from "react";
 
 function Filter({ items, setFilteredItems }) {
   const [query, setQuery] = useState("");
+  
 
-  const handleSearch = (e) => {
-    const value = e.target.value.toLowerCase();
-    setQuery(value);
-
-    if (!value.trim()) {
-      setFilteredItems(items);
-      return;
+  const handleFilter = () => {
+    if (query.trim() === "") {
+      setFilteredItems(items); // show all if empty
+    } else {
+      const filtered = items.filter((item) =>
+        item.category.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredItems(filtered);
     }
-
-    const filtered = items.filter((item) =>
-      item.name.toLowerCase().includes(value)
-    );
-    setFilteredItems(filtered);
   };
 
   return (
-    <div className="mb-4">
+    <div className="flex items-center space-x-2 mb-4">
       <input
         type="text"
-        placeholder="Search items..."
         value={query}
-        onChange={handleSearch}
-        className="border p-2 rounded w-full sm:w-1/2"
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Filter by category..."
+        className="border px-3 py-1 rounded w-64"
       />
+      <button
+        onClick={handleFilter}
+        className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700"
+      >
+        Apply Filter
+      </button>
     </div>
   );
 }
