@@ -6,7 +6,8 @@
       "category": "Furniture",
       "description": "A comfy old chair, still sturdy and perfect for a reading corner.",
       "image": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 1500
+      "price": 1500,
+      "inCart": false
     },
     {
       "id": "2",
@@ -22,7 +23,8 @@
       "category": "Books",
       "description": "Mixed novels and textbooks, free for anyone who loves reading.",
       "image": "https://images.unsplash.com/photo-1667312939934-60fc3bfa4ec0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 0
+      "price": 0,
+      "inCart": false
     },
     {
       "id": "4",
@@ -73,52 +75,12 @@
       "price": 800
     },
     {
-      "id": "93a0",
-      "title": "Iphone 16 pro max",
-      "category": "electronics",
-      "description": "brand new",
-      "image": "https://plus.unsplash.com/premium_photo-1681313824743-7b5a2a635938?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "10000000"
-    },
-    {
       "id": "0a25",
       "title": "watch",
       "category": "electronics",
       "description": "nwe",
       "image": "https://plus.unsplash.com/premium_photo-1681313824743-7b5a2a635938?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "price": 10000000000
-    },
-    {
-      "id": "530c",
-      "title": "watch",
-      "category": "electronics",
-      "description": "nwe",
-      "image": "https://plus.unsplash.com/premium_photo-1681313824743-7b5a2a635938?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 10000000000
-    },
-    {
-      "id": "6ac7",
-      "title": "new ",
-      "category": "electronics",
-      "description": "new",
-      "image": "https://plus.unsplash.com/premium_photo-1681313824743-7b5a2a635938?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "20000"
-    },
-    {
-      "id": "173f",
-      "title": "new",
-      "category": "electronics",
-      "description": "new",
-      "image": "https://plus.unsplash.com/premium_photo-1681313824743-7b5a2a635938?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "10"
-    },
-    {
-      "id": "6a18",
-      "title": "Cows",
-      "category": "Farm Animals",
-      "description": "Used like new ",
-      "image": "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?q=80&w=788&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "200000"
     }
   ],
   "users": [
