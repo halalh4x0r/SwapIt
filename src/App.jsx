@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ItemList from "./components/ItemList";
 import CreateListing from "./components/CreateListing";
+import AddItemPage from "./pages/AddItemPage";
 import "./App.css";
 
 function App() {
