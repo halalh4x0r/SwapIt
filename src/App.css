@@ -1,17 +1,23 @@
 /* Navbar */
 .navbar {
-  background-color: #222;
-  color: white;
+  background-color: #1e1e2f;
+  color: #fff;
   padding: 1rem;
   text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
 .footer {
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
+  color: #555;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
 }
 
 /* Item List */
@@ -26,22 +32,32 @@
 }
 
 .item-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
   padding: 1rem;
-  background: white;
+  background: #fff;
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .item-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .item-price {
   font-weight: bold;
-  color: #27ae60;
+  color: #16a34a;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
 }
 
 /* Create Listing Form */
@@ -51,25 +67,40 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .create-listing-form input,
 .create-listing-form textarea {
   padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.create-listing-form input:focus,
+.create-listing-form textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 6px rgba(22, 163, 74, 0.3);
+  outline: none;
 }
 
 .create-listing-form button {
-  padding: 0.8rem;
-  background: #222;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #16a34a, #0d9488);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .create-listing-form button:hover {
-  background: #444;
+  background: linear-gradient(135deg, #0d9488, #16a34a);
+  transform: translateY(-2px);
 }
-
