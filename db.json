@@ -111,6 +111,14 @@
       "description": "new",
       "image": "https://plus.unsplash.com/premium_photo-1681313824743-7b5a2a635938?q=80&w=1316&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "price": "10"
+    },
+    {
+      "id": "6a18",
+      "title": "Cows",
+      "category": "Farm Animals",
+      "description": "Used like new ",
+      "image": "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?q=80&w=788&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": "200000"
     }
   ],
   "users": [

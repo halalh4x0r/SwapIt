@@ -1,25 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ItemList from "./components/ItemList";
 import CreateListing from "./components/CreateListing";
-import AddItemPage from "./pages/AddItemPage";
 import "./App.css";
 
 function App() {
-  const [items, setItems] = useState([]);
-
-  // Function to handle adding new items from CreateListing
-  function handleAddItem(newItem) {
-    setItems([...items, newItem]);
-  }
-
   return (
-    <div className="app">
+    <div className="App">
       <Navbar />
       <main>
-        <CreateListing onAddItem={handleAddItem} />
-        <ItemList items={items} />
+        <Routes>
+          <Route path="/" element={<ItemList />} />
+          <Route path="/create" element={<CreateListing />} />
+        </Routes>
       </main>
       <Footer />
     </div>
