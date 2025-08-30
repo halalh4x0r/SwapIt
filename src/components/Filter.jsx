@@ -77,15 +77,7 @@ function Filter({ items, categories, onFilter }) {
       <h2 className="text-lg font-semibold mb-4">Filter & Sort</h2>
       
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Search by title or description..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
+        
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {/* Category Filter */}

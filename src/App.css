@@ -40,7 +40,6 @@ body {
   color: #0f172a;
 }
 
-/* IMPORTANT: Your grid container in JSX must be className="items-grid" */
 .items-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
@@ -130,7 +129,7 @@ body {
 .delete-btn  { background-color: #ef4444; }  /* red */
 .delete-btn:hover { background-color: #dc2626; transform: translateY(-2px); }
 
-/* ===== Form (Create Listing) ===== */
+
 .create-listing-form {
   max-width: 520px;
   margin: 24px auto;
@@ -226,8 +225,8 @@ body {
   background-color: #1d4ed8;
   transform: translateY(-1px);
 }
-=======
-/* Filter Component Styles */
+
+
 .filter-container {
   background: white;
   border-radius: 8px;
@@ -435,3 +434,36 @@ body {
   font-size: 12px;
   margin-top: 4px;
 }
+.checkout-icon {
+  width: 40px;   /* make it smaller */
+  height: 40px;  /* keep consistent */
+  object-fit: contain; /* scale nicely */
+  align-items: center;
+  
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* space left vs right */
+  align-items: center;
+  padding: 10px 20px;
+  background: #0d1b2a;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.nav-checkout {
+  margin-left: auto;   /* forces checkout all the way right */
+  display: flex;
+  align-items: center;
+}
+
+.checkout-icon {
+  width: 28px;
+  height: 28px;
+}
+

@@ -15,7 +15,8 @@
       "category": "Electronics",
       "description": "Still works, needs a new battery. Great for browsing or coding practice.",
       "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 12000
+      "price": 12000,
+      "inCart": false
     },
     {
       "id": "3",
@@ -24,7 +25,7 @@
       "description": "Mixed novels and textbooks, free for anyone who loves reading.",
       "image": "https://images.unsplash.com/photo-1667312939934-60fc3bfa4ec0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "price": 0,
-      "inCart": false
+      "inCart": true
     },
     {
       "id": "4",
@@ -67,7 +68,8 @@
       "category": "Furniture",
       "description": "Adjustable desk lamp, great for late-night study sessions.",
       "image": "https://images.unsplash.com/photo-1621447980929-6638614633c8?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 800
+      "price": 800,
+      "inCart": true
     },
     {
       "id": "d5f5",
@@ -75,7 +77,8 @@
       "category": "Furniture",
       "description": "A family sized sofa that has never been used made with Italian Leather.",
       "image": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "20000"
+      "price": "20000",
+      "inCart": true
     }
   ],
   "users": [
