@@ -4,9 +4,10 @@ import "../App.css";
 
 function ItemList() {
   const [items, setItems] = useState([]);
+  const [swappedItems, setSwappedItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/items") // json-server endpoint
+    fetch("http://localhost:3000/items") 
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.error("Error fetching items:", err));
@@ -26,7 +27,6 @@ function ItemList() {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, inCart: !item.inCart } : item
     );
-
     setItems(updatedItems);
 
     // Update on server too
@@ -38,19 +38,46 @@ function ItemList() {
     }).catch((err) => console.error("Error updating cart:", err));
   }
 
+  // Handle swap
+  function handleSwap(id) {
+    const itemToSwap = items.find((item) => item.id === id);
+    if (!itemToSwap) return; 
+
+    setSwappedItems([...swappedItems, itemToSwap]);
+    setItems(items.filter((item) => item.id !== id));
+  }
+
   return (
     <div className="item-list">
       <h2>Available Listings</h2>
       <div className="items-grid">
         {items.map((item) => (
-          <ItemCard 
-            key={item.id} 
-            item={item} 
-            onDelete={handleDelete} 
-            onToggleCart={handleToggleCart} 
+          <ItemCard
+            key={item.id}
+            item={item}
+            onDelete={handleDelete}
+            onToggleCart={handleToggleCart}
+            onSwap={handleSwap} 
           />
         ))}
       </div>
+
+      {swappedItems.length > 0 && (
+        <div className="swapped-items mt-8">
+          <h2>Swapped Items</h2>
+          <div className="items-grid">
+            {swappedItems.map((item) => (
+              <ItemCard
+                key={item.id}
+                item={item}
+                onDelete={handleDelete}
+                onToggleCart={handleToggleCart}
+                
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
