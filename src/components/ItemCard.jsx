@@ -1,4 +1,4 @@
-// src/components/ItemCard.js
+import { Link } from "react-router-dom";
 import React from "react";
 import "../App.css";
 
@@ -20,9 +20,10 @@ function ItemCard({ item, onDelete, onToggleCart }) {
         <button className="swap-btn" onClick={handleSwapClick}>
           Swap It
         </button>
-        <button className="details-btn">
-          View Details
-        </button>
+        <Link to={`/items/${item.id}`} className="details-btn">
+  View Details
+</Link>
+
         <button className="delete-btn" onClick={() => onDelete(item.id)}>
           Delete
         </button>
