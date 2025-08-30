@@ -6,7 +6,7 @@ function ItemList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/items") // json-server endpoint
+    fetch("http://localhost:3000/items") // json-server endpoint
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.error("Error fetching items:", err));

@@ -8,7 +8,7 @@ function HomePage() {
 
   // Fetch your items when the page loads
   useEffect(() => {
-    fetch("http://localhost:4000/items") // adjust API URL if needed
+    fetch("http://localhost:3000/items") // adjust API URL if needed
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
