@@ -45,7 +45,7 @@ function ItemDetails() {
             Add to Cart
           </button>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
-            Buy Now
+            Swap It
           </button>
         </div>
       </div>
