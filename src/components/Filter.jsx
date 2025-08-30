@@ -1,0 +1,171 @@
+import React, { useState } from "react";
+
+function Filter({ items, categories, onFilter }) {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [sortBy, setSortBy] = useState("default");
+  const [priceRange, setPriceRange] = useState({ min: "", max: "" });
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Apply all filters
+  const applyFilters = () => {
+    let filtered = [...items];
+
+    // Category filter
+    if (selectedCategory !== "All") {
+      filtered = filtered.filter(item => item.category === selectedCategory);
+    }
+
+    // Search filter
+    if (searchTerm.trim()) {
+      const searchTermLower = searchTerm.toLowerCase().trim();
+      filtered = filtered.filter(item =>
+        item.title.toLowerCase().includes(searchTermLower) ||
+        (item.description && item.description.toLowerCase().includes(searchTermLower))
+      );
+    }
+
+    // Price range filter
+    if (priceRange.min) {
+      filtered = filtered.filter(item => item.price >= parseFloat(priceRange.min));
+    }
+    if (priceRange.max) {
+      filtered = filtered.filter(item => item.price <= parseFloat(priceRange.max));
+    }
+
+    // Sorting
+    switch (sortBy) {
+      case "price-low":
+        filtered.sort((a, b) => a.price - b.price);
+        break;
+      case "price-high":
+        filtered.sort((a, b) => b.price - a.price);
+        break;
+      case "name":
+        filtered.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      default:
+        break;
+    }
+
+    onFilter(filtered);
+  };
+
+  const handlePriceChange = (field, value) => {
+    if (value === '' || /^\d*\.?\d*$/.test(value)) {
+      setPriceRange(prev => ({
+        ...prev,
+        [field]: value
+      }));
+    }
+  };
+
+  const clearFilters = () => {
+    setSelectedCategory("All");
+    setSortBy("default");
+    setPriceRange({ min: "", max: "" });
+    setSearchTerm("");
+    onFilter(items);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    applyFilters();
+  };
+
+  return (
+    <div className="bg-white p-4 rounded-lg shadow-md mb-6">
+      <h2 className="text-lg font-semibold mb-4">Filter & Sort</h2>
+      
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <input
+            type="text"
+            placeholder="Search by title or description..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          {/* Category Filter */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Category
+            </label>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              {categories.map(category => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Price Range */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Price Range
+            </label>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Min"
+                value={priceRange.min}
+                onChange={(e) => handlePriceChange("min", e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                placeholder="Max"
+                value={priceRange.max}
+                onChange={(e) => handlePriceChange("max", e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          {/* Sort By */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Sort By
+            </label>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="default">Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex items-end gap-2">
+            <button
+              type="submit"
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+            >
+              Apply Filters
+            </button>
+            <button
+              type="button"
+              onClick={clearFilters}
+              className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-md transition-colors"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default Filter;
