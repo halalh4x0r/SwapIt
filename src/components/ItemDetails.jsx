@@ -6,7 +6,7 @@ function ItemDetails() {
   const [item, setItem] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/items/${id}`)
+    fetch(`http://localhost:3000/items/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data))
       .catch((err) => console.error("Error fetching item:", err));
