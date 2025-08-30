@@ -1,46 +1,30 @@
-// src/pages/HomePage.jsx
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Filter from "../components/Filter";
+import ItemList from "../components/ItemList";
 
 function HomePage() {
   const [items, setItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
 
+  // Fetch your items when the page loads
   useEffect(() => {
-    fetch("http://localhost:3000/items")
+    fetch("http://localhost:4000/items") // adjust API URL if needed
       .then((res) => res.json())
-      .then((data) => setItems(data))
-      .catch((err) => console.error("Error fetching items:", err));
+      .then((data) => {
+        setItems(data);
+        setFilteredItems(data); // default: show all
+      });
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Available Items</h1>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Available Listings</h1>
+      
+      {/* Filter Input */}
+      <Filter items={items} setFilteredItems={setFilteredItems} />
 
-      {items.length === 0 ? (
-        <p>No items found. Please add some!</p>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {items.map((item) => (
-            <div
-              key={item.id}
-              className="border rounded-lg shadow hover:shadow-lg bg-white p-4"
-            >
-              <Link to={`/items/${item.id}`}>
-                <img
-                  src={item.image || "https://via.placeholder.com/200"}
-                  alt={item.name}
-                  className="w-full h-48 object-contain mb-3"
-                />
-                <h2 className="text-lg font-semibold">{item.name}</h2>
-                {item.price && (
-                  <p className="text-green-600 font-bold">${item.price}</p>
-                )}
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </Link>
-            </div>
-          ))}
-        </div>
-      )}
+      {/* Item Cards */}
+      <ItemList items={filteredItems} />
     </div>
   );
 }
