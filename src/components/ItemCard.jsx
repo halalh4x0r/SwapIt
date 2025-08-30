@@ -2,7 +2,15 @@ import { Link } from "react-router-dom";
 import React from "react";
 import "../App.css";
 
+
 function ItemCard({ item, onDelete, onToggleCart, onSwap }) { 
+=======
+function ItemCard({ item, onDelete, onToggleCart, onFilter }) {
+  function handleSwapClick() {
+    alert(`You want to swap: ${item.title}`);
+  }
+
+
   return (
     <div className="item-card">
       <img src={item.image} alt={item.title} className="item-image" />
@@ -12,11 +20,17 @@ function ItemCard({ item, onDelete, onToggleCart, onSwap }) {
       <p className="item-price">Ksh {item.price}</p>
 
       <div className="item-actions">
+
         {onSwap && (
           <button className="swap-btn" onClick={() => onSwap(item.id)}>
             Swap It
           </button>
         )}
+=======
+        <button className="swap-btn" onClick={handleSwapClick}>
+          Swap It
+        </button>
+
 
         <Link to={`/items/${item.id}`} className="details-btn">
           View Details
@@ -32,6 +46,16 @@ function ItemCard({ item, onDelete, onToggleCart, onSwap }) {
         >
           {item.inCart ? "Remove from Cart" : "Add to Cart"}
         </button>
+
+        
+        {onFilter && (
+          <button 
+            className="filter-btn"
+            onClick={() => onFilter(item.category)}
+          >
+            More in {item.category}
+          </button>
+        )}
       </div>
     </div>
   );

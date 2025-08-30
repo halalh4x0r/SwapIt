@@ -40,12 +40,8 @@ function ItemDetails() {
             Ksh {item.price}
           </p>
           <p>{item.description}</p>
-
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
-            Add to Cart
-          </button>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
-            Buy Now
+            Swap It
           </button>
         </div>
       </div>
