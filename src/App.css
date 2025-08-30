@@ -167,3 +167,23 @@ body {
   cursor: pointer;
 }
 .create-listing-form button:hover { background: #1d4ed8; }
+/* Buttons as links */
+.details-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #28a745; /* green for details */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none; /* removes underline from Link */
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.details-btn:hover {
+  background-color: #1e7e34; /* darker green on hover */
+  transform: translateY(-1px);
+}
