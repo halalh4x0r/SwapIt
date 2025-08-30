@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-// src/App.jsx
-import React, { useEffect } from "react";
-
-
-
-function App() {
-=======
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -32,7 +24,7 @@ function App() {
       <Footer />
     </div>
   );
->>>>>>> d93b9cb7c788d95384d38fa0f6c30eda17f18b88
+
 }
 
 export default App;
