@@ -17,12 +17,15 @@ function ItemCard({ item, onDelete, onToggleCart, onSwap }) {
             Swap It
           </button>
         )}
+
         <Link to={`/items/${item.id}`} className="details-btn">
           View Details
         </Link>
+
         <button className="delete-btn" onClick={() => onDelete(item.id)}>
           Delete
         </button>
+
         <button 
           className="cart-btn" 
           onClick={() => onToggleCart(item.id)}
