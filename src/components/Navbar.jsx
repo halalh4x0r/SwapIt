@@ -10,7 +10,7 @@ function Navbar({ cartCount, onSearch }) {
       <div className="flex gap-4 items-center">
         <Link to="/">Home</Link>
         <Link to="/create">Create Listing</Link>
-        {/* 🔑 Cart count now reflects items in cart */}
+        {/*  Cart count now reflects items in cart */}
         <Link to="/checkout">🛒 Cart ({cartCount})</Link>
         
       </div>

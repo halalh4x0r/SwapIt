@@ -19,7 +19,6 @@ function App() {
           <Route path="/items" element={<ItemList />} />
           <Route path="/items/:id" element={<ItemDetails />} />
           <Route path="/create" element={<CreateListing />} />
-          
         </Routes>
       </main>
       <Footer />

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Filter from "../components/Filter";
 import ItemList from "../components/ItemList";
-import SearchBar from "../components/SearchBar"; // ✅ import SearchBar
+import SearchBar from "../components/SearchBar"; //  import SearchBar
 
 function HomePage() {
   const [items, setItems] = useState([]);
@@ -21,7 +21,7 @@ function HomePage() {
       .catch((err) => console.error("Error fetching items:", err));
   }, []);
 
-  // ✅ Search handler
+  //  Search handler
   const handleSearch = (term) => {
     if (!term.trim()) {
       setFilteredItems(items); // reset when input empty
@@ -62,7 +62,7 @@ function HomePage() {
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Available Listings</h1>
 
-      {/* ✅ SearchBar placed here */}
+      {/*  SearchBar placed here */}
       <SearchBar onSearch={handleSearch} />
 
       {/* Filter section */}

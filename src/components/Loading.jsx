@@ -1,3 +1,5 @@
-export default function Loading() {
+function Loading() {
   return <div className="container">Loading…</div>;
 }
+
+export default  Loading;
