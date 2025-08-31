@@ -8,7 +8,7 @@ function Loading() {
       <div className="loading-content">
         <div className="spinner"></div>
         <h2>SwapIt</h2>
-        <p>Loading your trading experience...</p>
+        <p>Loading your swapping experience...</p>
       </div>
     </div>
   );
