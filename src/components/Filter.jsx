@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaFilter, FaTimes } from "react-icons/fa";
 
 function Filter({ items, categories, onFilter }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -140,20 +141,15 @@ function Filter({ items, categories, onFilter }) {
 
           {/* Action Buttons */}
           <div className="flex items-end gap-2">
-            <button
-              type="submit"
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
-            >
-              Apply Filters
-            </button>
-            <button
-              type="button"
-              onClick={clearFilters}
-              className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-md transition-colors"
-            >
-              Clear
-            </button>
-          </div>
+  <button type="submit" className="filter-btn">
+    <FaFilter /> Apply Filters
+  </button>
+
+  <button type="button" onClick={clearFilters} className="clear-btn">
+    <FaTimes /> Clear
+  </button>
+</div>
+
         </div>
       </form>
     </div>

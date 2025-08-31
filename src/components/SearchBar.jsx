@@ -11,20 +11,18 @@ function SearchBar({ onSearch }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex items-center gap-2">
-      <input
-        type="text"
-        placeholder="Search items..."
-        value={term}
-        onChange={(e) => setTerm(e.target.value)}
-        className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      <button
-        type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-      >
-        Search
-      </button>
-    </form>
+  <input
+    type="text"
+    placeholder="Search items..."
+    value={term}
+    onChange={(e) => setTerm(e.target.value)}
+    className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
+  <button type="submit" className="search-btn">
+    Search
+  </button>
+</form>
+
   );
 }
 

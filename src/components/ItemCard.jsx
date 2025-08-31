@@ -1,30 +1,21 @@
-// src/components/ItemCard.jsx
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Make sure this import is correct
+import { useCart } from "../context/CartContext";
+import { FaEye } from "react-icons/fa"; // 👁️ Eye icon
 import "../App.css";
 
 function ItemCard({ item, onDelete }) {
   const { addToCart, removeFromCart, cartItems } = useCart();
-  
   const isInCart = cartItems.some(cartItem => cartItem.id === item.id);
 
-  // Handle Swap button
-// In your ItemCard.jsx, add debugging:
-function handleSwapClick() {
-  console.log('Swap button clicked for:', item.title);
-  console.log('Current cart items:', cartItems);
-  console.log('Is in cart:', isInCart);
-  
-  if (isInCart) {
-    removeFromCart(item.id);
-    console.log('Removed from cart');
-    alert(`Removed ${item.title} from swap cart`);
-  } else {
-    addToCart(item);
-    console.log('Added to cart');
-    alert(`Added ${item.title} to swap cart. Ready to swap!`);
+  function handleSwapClick() {
+    if (isInCart) {
+      removeFromCart(item.id);
+      alert(`Removed ${item.title} from swap cart`);
+    } else {
+      addToCart(item);
+      alert(`Added ${item.title} to swap cart. Ready to swap!`);
+    }
   }
-}
 
   return (
     <div className="item-card">
@@ -42,8 +33,9 @@ function handleSwapClick() {
           {isInCart ? "Remove from Swap" : "Swap It"}
         </button>
 
-        <Link to={`/items/${item.id}`} className="details-btn">
-          View Details
+        {/* Now uses react-icons 👇 */}
+        <Link to={`/items/${item.id}`} className="icon-link view">
+          <FaEye />
         </Link>
 
         <button className="delete-btn" onClick={() => onDelete(item.id)}>
