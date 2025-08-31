@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Filter from "../components/Filter";
 import ItemList from "../components/ItemList";
+import SearchBar from "../components/SearchBar"; // ✅ import SearchBar
 
-function HomePage({ onCartUpdate }) { // 🔑 accept callback from parent (App)
+function HomePage() {
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -19,6 +20,21 @@ function HomePage({ onCartUpdate }) { // 🔑 accept callback from parent (App)
       })
       .catch((err) => console.error("Error fetching items:", err));
   }, []);
+
+  // ✅ Search handler
+  const handleSearch = (term) => {
+    if (!term.trim()) {
+      setFilteredItems(items); // reset when input empty
+    } else {
+      const lower = term.toLowerCase();
+      const searched = items.filter(
+        (i) =>
+          i.title.toLowerCase().includes(lower) ||
+          (i.description && i.description.toLowerCase().includes(lower))
+      );
+      setFilteredItems(searched);
+    }
+  };
 
   const handleFilter = (filteredResults) => {
     setFilteredItems(filteredResults);
@@ -36,10 +52,6 @@ function HomePage({ onCartUpdate }) { // 🔑 accept callback from parent (App)
     );
     setItems(updated);
     setFilteredItems(updated);
-
-    // 🔑 extract only items in cart and send up to App
-    const cartItems = updated.filter((i) => i.inCart);
-    onCartUpdate(cartItems);
   };
 
   const handleSwap = (id) => {
@@ -49,7 +61,14 @@ function HomePage({ onCartUpdate }) { // 🔑 accept callback from parent (App)
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Available Listings</h1>
+
+      {/* ✅ SearchBar placed here */}
+      <SearchBar onSearch={handleSearch} />
+
+      {/* Filter section */}
       <Filter items={items} categories={categories} onFilter={handleFilter} />
+
+      {/* List of items */}
       <ItemList
         items={filteredItems}
         onDelete={handleDelete}
