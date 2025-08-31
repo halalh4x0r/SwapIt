@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { FaShoppingCart } from "react-icons/fa";
 import "../App.css";
 
 function Navbar({ cartCount, onSearch }) {
@@ -11,7 +12,12 @@ function Navbar({ cartCount, onSearch }) {
         <Link to="/">Home</Link>
         <Link to="/create">Create Listing</Link>
         {/*  Cart count now reflects items in cart */}
-        <Link to="/checkout">Cart ({cartCount})</Link>
+        <Link to="/checkout" className="cart-link">
+  <div className="cart-container">
+    <FaShoppingCart className="cart-icon" />
+    {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+  </div>
+</Link>
         
       </div>
     </nav>
