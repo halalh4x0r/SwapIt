@@ -11,7 +11,7 @@ function Navbar({ cartCount, onSearch }) {
         <Link to="/">Home</Link>
         <Link to="/create">Create Listing</Link>
         {/*  Cart count now reflects items in cart */}
-        <Link to="/checkout">🛒 Cart ({cartCount})</Link>
+        <Link to="/checkout">Cart ({cartCount})</Link>
         
       </div>
     </nav>
