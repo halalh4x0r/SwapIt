@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import { FaEye } from "react-icons/fa"; // 👁️ Eye icon
+import { FaEye } from "react-icons/fa"; //  Eye icon
 import "../App.css";
 
 function ItemCard({ item, onDelete }) {
@@ -33,7 +33,7 @@ function ItemCard({ item, onDelete }) {
           {isInCart ? "Remove from Swap" : "Swap It"}
         </button>
 
-        {/* Now uses react-icons 👇 */}
+        {/* Now uses react-icons  */}
         <Link to={`/items/${item.id}`} className="icon-link view">
           <FaEye />
         </Link>
