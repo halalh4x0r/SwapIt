@@ -449,3 +449,65 @@ a {
     opacity: 1;
   }
 }
+/* ---- small additions: navbar search + icon + filter drawer ---- */
+
+.navbar-search {
+  display: block;
+  max-width: 420px;
+  min-width: 200px;
+}
+
+/* small icon button (used for filter close/open) */
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease;
+}
+.icon-btn:hover { transform: scale(1.05); background: rgba(255,255,255,0.12); }
+
+/* filter drawer overlay and panel */
+.filter-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1500;
+  display: flex;
+  justify-content: flex-start; /* slide from left */
+}
+.filter-drawer {
+  width: min(360px, 92%);
+  height: 100%;
+  background: #fff;
+  padding: 16px;
+  overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+  z-index: 1501;
+}
+
+/* smaller search button / inputs across app */
+button, .filter-btn, .clear-btn, .search-btn {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+/* keep SwapIt brand visible with existing coloring */
+.brand {
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* responsive: hide large search in navbar on small screens */
+@media (max-width: 768px) {
+  .navbar-search { display: none; } /* mobile: hide large search (drawer/filter will handle mobile) */
+}

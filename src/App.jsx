@@ -1,37 +1,34 @@
-// src/App.js
-import React, { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+// src/App.jsx
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";  // ❌ remove BrowserRouter here
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import LoadingSpinner from "./components/Loading";
+import HomePage from "./pages/HomePage";
+import CreateListing from "./components/CreateListing";
+import CheckoutPage from "./pages/CheckoutPage";
+import { SearchFilterProvider } from "./context/SearchFilterContext";
 import { CartProvider } from "./context/CartContext";
-import "./App.css";
-
-// Lazy load all page components
-const HomePage = lazy(() => import("./pages/HomePage"));
-const ItemList = lazy(() => import("./components/ItemList"));
-const ItemDetails = lazy(() => import("./components/ItemDetails"));
-const CreateListing = lazy(() => import("./components/CreateListing"));
-const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
 
 function App() {
+  const [items, setItems] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/items")
+      .then((res) => res.json())
+      .then((data) => setItems(data))
+      .catch((err) => console.error("Error fetching items:", err));
+  }, []);
+
   return (
     <CartProvider>
-      <div className="App">
-        <Navbar />
-        <main className="main-content">
-          <Suspense fallback={<LoadingSpinner />}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/items" element={<ItemList />} />
-              <Route path="/items/:id" element={<ItemDetails />} />
-              <Route path="/create" element={<CreateListing />} />
-              <Route path="/checkout" element={<CheckoutPage />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </div>
+      <SearchFilterProvider>
+        <Navbar cartCount={cart.length} />
+        <Routes>
+          <Route path="/" element={<HomePage items={items} setCart={setCart} />} />
+          <Route path="/create" element={<CreateListing />} />
+          <Route path="/checkout" element={<CheckoutPage cart={cart} />} />
+        </Routes>
+      </SearchFilterProvider>
     </CartProvider>
   );
 }

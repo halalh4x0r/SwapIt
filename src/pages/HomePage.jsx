@@ -1,42 +1,47 @@
 // src/pages/HomePage.jsx
 import React, { useState, useEffect } from "react";
-import Filter from "../components/Filter";
 import ItemList from "../components/ItemList";
-import SearchBar from "../components/SearchBar"; //  import SearchBar
+import FilterDrawer from "../components/FilterDrawer";
+import { useSearchFilter } from "../context/SearchFilterContext";
+import "../App.css";
 
 function HomePage() {
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
   const [categories, setCategories] = useState([]);
 
+  const { searchTerm } = useSearchFilter();
+
   useEffect(() => {
     fetch("http://localhost:3000/items")
       .then((res) => res.json())
       .then((data) => {
-        const withCartFlag = data.map((i) => ({ ...i, inCart: false }));
-        setItems(withCartFlag);
-        setFilteredItems(withCartFlag);
-        setCategories(["All", ...new Set(data.map((i) => i.category))]);
+        const norm = data.map((i) => ({ ...i, inCart: false }));
+        setItems(norm);
+        setFilteredItems(norm);
+        setCategories(["All", ...Array.from(new Set(data.map((i) => i.category || "Uncategorized")) )]);
       })
       .catch((err) => console.error("Error fetching items:", err));
   }, []);
 
-  //  Search handler
-  const handleSearch = (term) => {
-    if (!term.trim()) {
-      setFilteredItems(items); // reset when input empty
-    } else {
-      const lower = term.toLowerCase();
-      const searched = items.filter(
-        (i) =>
-          i.title.toLowerCase().includes(lower) ||
-          (i.description && i.description.toLowerCase().includes(lower))
-      );
-      setFilteredItems(searched);
+  // react to navbar search input
+  useEffect(() => {
+    if (!searchTerm || !searchTerm.trim()) {
+      setFilteredItems(items);
+      return;
     }
-  };
+    const lower = searchTerm.toLowerCase();
+    setFilteredItems(
+      items.filter(
+        (i) =>
+          (i.title && i.title.toLowerCase().includes(lower)) ||
+          (i.description && i.description.toLowerCase().includes(lower))
+      )
+    );
+  }, [searchTerm, items]);
 
-  const handleFilter = (filteredResults) => {
+  // receive filtered array from FilterDrawer -> Filter -> onFilter
+  const handleFilterApply = (filteredResults) => {
     setFilteredItems(filteredResults);
   };
 
@@ -47,34 +52,20 @@ function HomePage() {
   };
 
   const handleToggleCart = (id) => {
-    const updated = items.map((i) =>
-      i.id === id ? { ...i, inCart: !i.inCart } : i
-    );
+    const updated = items.map((i) => (i.id === id ? { ...i, inCart: !i.inCart } : i));
     setItems(updated);
     setFilteredItems(updated);
-  };
-
-  const handleSwap = (id) => {
-    console.log("Swapped item:", id);
   };
 
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Available Listings</h1>
 
-      {/*  SearchBar placed here */}
-      <SearchBar onSearch={handleSearch} />
+      {/* Filter drawer toggled from Navbar */}
+      <FilterDrawer items={items} categories={categories} onFilter={handleFilterApply} />
 
-      {/* Filter section */}
-      <Filter items={items} categories={categories} onFilter={handleFilter} />
-
-      {/* List of items */}
-      <ItemList
-        items={filteredItems}
-        onDelete={handleDelete}
-        onToggleCart={handleToggleCart}
-        onSwap={handleSwap}
-      />
+      {/* Items list */}
+      <ItemList items={filteredItems} onDelete={handleDelete} onToggleCart={handleToggleCart} />
     </div>
   );
 }
