@@ -5,7 +5,7 @@
       "title": "Wooden Chair",
       "category": "Furniture",
       "description": "A comfy old chair, still sturdy and perfect for a reading corner.",
-      "image": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=987&auto=format&fit=crop",
       "price": 1500,
       "inCart": false
     },
@@ -14,7 +14,7 @@
       "title": "Laptop",
       "category": "Electronics",
       "description": "Still works, needs a new battery. Great for browsing or coding practice.",
-      "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1364&auto=format&fit=crop",
       "price": 12000,
       "inCart": false
     },
@@ -23,24 +23,25 @@
       "title": "Box of Books",
       "category": "Books",
       "description": "Mixed novels and textbooks, free for anyone who loves reading.",
-      "image": "https://images.unsplash.com/photo-1667312939934-60fc3bfa4ec0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://images.unsplash.com/photo-1667312939934-60fc3bfa4ec0?q=80&w=987&auto=format&fit=crop",
       "price": 0,
-      "inCart": true
+      "inCart": false
     },
     {
       "id": "4",
       "title": "Winter Jacket",
       "category": "Clothing",
       "description": "Warm, barely used winter jacket. Size M.",
-      "image": "https://images.unsplash.com/photo-1706765779494-2705542ebe74?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": 2500
+      "image": "https://images.unsplash.com/photo-1706765779494-2705542ebe74?q=80&w=1951&auto=format&fit=crop",
+      "price": 2500,
+      "inCart": false
     },
     {
       "id": "5",
       "title": "Coffee Maker",
       "category": "Electronics",
       "description": "Small drip coffee machine, works perfectly.",
-      "image": "https://images.unsplash.com/photo-1608354580875-30bd4168b351?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://images.unsplash.com/photo-1608354580875-30bd4168b351?q=80&w=987&auto=format&fit=crop",
       "price": 3000,
       "inCart": false
     },
@@ -48,37 +49,136 @@
       "id": "6",
       "title": "Kids' Bicycle",
       "category": "Sports",
-      "description": "Outgrown kids’ bike, needs minor repair.",
-      "image": "https://images.unsplash.com/photo-1643572464934-682ef0697e8c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Outgrown kids' bike, needs minor repair.",
+      "image": "https://images.unsplash.com/photo-1643572464934-682ef0697e8c?q=80&w=2340&auto=format&fit=crop",
       "price": 4000,
-      "inCart": true
+      "inCart": false
+    },
+    {
+      "id": "7",
+      "title": "Vintage Camera",
+      "category": "Electronics",
+      "description": "Classic film camera from the 80s, works well. Great for photography enthusiasts.",
+      "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=2340&auto=format&fit=crop",
+      "price": 8500,
+      "inCart": false
     },
     {
       "id": "8",
       "title": "Guitar",
       "category": "Music",
       "description": "Acoustic guitar, strings need replacement but otherwise fine.",
-      "image": "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://images.unsplash.com/photo-1520167112707-56e25f2d7d6e?q=80&w=987&auto=format&fit=crop",
       "price": 7000,
-      "inCart": true
+      "inCart": false
     },
     {
       "id": "9",
       "title": "Desk Lamp",
       "category": "Furniture",
       "description": "Adjustable desk lamp, great for late-night study sessions.",
-      "image": "https://images.unsplash.com/photo-1621447980929-6638614633c8?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://images.unsplash.com/photo-1621447980929-6638614633c8?q=80&w=1336&auto=format&fit=crop",
       "price": 800,
-      "inCart": true
+      "inCart": false
     },
     {
-      "id": "d5f5",
-      "title": "Sofa",
+      "id": "10",
+      "title": "Italian Leather Sofa",
       "category": "Furniture",
       "description": "A family sized sofa that has never been used made with Italian Leather.",
-      "image": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "20000",
-      "inCart": true
+      "image": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=2340&auto=format&fit=crop",
+      "price": 20000,
+      "inCart": false
+    },
+    {
+      "id": "11",
+      "title": "Bluetooth Headphones",
+      "category": "Electronics",
+      "description": "Wireless over-ear headphones with noise cancellation. Battery lasts 20+ hours.",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2340&auto=format&fit=crop",
+      "price": 4500,
+      "inCart": false
+    },
+    {
+      "id": "12",
+      "title": "Yoga Mat",
+      "category": "Sports",
+      "description": "Premium non-slip yoga mat, barely used. Excellent condition.",
+      "image": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=2340&auto=format&fit=crop",
+      "price": 1200,
+      "inCart": false
+    },
+    {
+      "id": "13",
+      "title": "Smart Watch",
+      "category": "Electronics",
+      "description": "Fitness tracker with heart rate monitor. Works with Android and iOS.",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2339&auto=format&fit=crop",
+      "price": 6000,
+      "inCart": false
+    },
+    {
+      "id": "14",
+      "title": "Cooking Pot Set",
+      "category": "Kitchen",
+      "description": "Stainless steel pot set with lids. 3 pieces, great for beginners.",
+      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2340&auto=format&fit=crop",
+      "price": 3500,
+      "inCart": false
+    },
+    {
+      "id": "15",
+      "title": "Office Chair",
+      "category": "Furniture",
+      "description": "Ergonomic office chair with lumbar support. Adjustable height.",
+      "image": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?q=80&w=2340&auto=format&fit=crop",
+      "price": 5500,
+      "inCart": false
+    },
+    {
+      "id": "16",
+      "title": "Running Shoes",
+      "category": "Sports",
+      "description": "Lightweight running shoes, size 42. Used only for a few runs.",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2340&auto=format&fit=crop",
+      "price": 2800,
+      "inCart": false
+    },
+    {
+      "id": "17",
+      "title": "Backpack",
+      "category": "Clothing",
+      "description": "Durable travel backpack with laptop compartment. 30L capacity.",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=2340&auto=format&fit=crop",
+      "price": 1800,
+      "inCart": false
+    },
+    {
+      "id": "18",
+      "title": "Plant Pot Collection",
+      "category": "Home & Garden",
+      "description": "Set of 4 decorative ceramic plant pots. Various sizes.",
+      "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=2344&auto=format&fit=crop",
+      "price": 900,
+      "inCart": false
+    },
+    {
+      "id": "19",
+      "title": "Keyboard",
+      "category": "Electronics",
+      "description": "Mechanical gaming keyboard with RGB lighting. Cherry MX switches.",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=2365&auto=format&fit=crop",
+      "price": 3200,
+      "inCart": false
+    },
+    {
+      "id": "20",
+      "title": "Sunglasses",
+      "category": "Clothing",
+      "description": "Polarized sunglasses with UV protection. Classic aviator style.",
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=2340&auto=format&fit=crop",
+      "price": 1500,
+      "inCart": false
     }
   ],
   "users": [
