@@ -17,13 +17,13 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2" role="search">
+    <form onSubmit={handleSubmit} className="search-form" role="search">
       <input
         type="text"
         placeholder="Search items..."
         value={term}
         onChange={handleChange}
-        className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="search-input"
         aria-label="Search items"
       />
       <button type="submit" className="search-btn">Search</button>
