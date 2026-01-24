@@ -3,7 +3,8 @@ body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
   background: url("https://www.transparenttextures.com/patterns/cubes.png"),
-              linear-gradient(135deg, #fdfcfb, #f3e9dc); /* light cream-brown tint */
+    linear-gradient(135deg, #fdfcfb, #f3e9dc);
+  /* light cream-brown tint */
   background-size: auto, cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -12,7 +13,9 @@ body {
 
 
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 10px;
 }
 
@@ -42,9 +45,11 @@ a {
   letter-spacing: 2px;
   background: linear-gradient(90deg, #ffcc00, #ff6600);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  font-family: "Orbitron", sans-serif; /* Techy vibe */
+  font-family: "Orbitron", sans-serif;
+  /* Techy vibe */
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -107,14 +112,14 @@ a {
 .item-card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   padding: 15px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .item-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 .item-image {
@@ -148,9 +153,11 @@ a {
 
 /* === Swap Button === */
 .swap-btn {
-  background: #22c55e; /* green-500 */
+  background: #22c55e;
+  /* green-500 */
   color: white;
 }
+
 .swap-btn:hover {
   background: #16a34a;
 }
@@ -160,6 +167,7 @@ a {
   background: #3b82f6;
   color: white;
 }
+
 .details-btn:hover {
   background: #2563eb;
 }
@@ -169,6 +177,7 @@ a {
   background: #ef4444;
   color: white;
 }
+
 .delete-btn:hover {
   background: #dc2626;
 }
@@ -178,20 +187,25 @@ a {
   background: #f59e0b;
   color: white;
 }
+
 .cart-btn:hover {
   background: #d97706;
 }
 
 /* === Filter Button === */
 .filter-btn {
-  background-color: #facc15; /* yellow */
+  background-color: #facc15;
+  /* yellow */
   color: #000;
   font-weight: 500;
 }
+
 .filter-btn:hover {
-  background-color: #eab308; /* darker yellow */
+  background-color: #eab308;
+  /* darker yellow */
   transform: scale(1.05);
 }
+
 .filter-btn svg {
   width: 16px;
   height: 16px;
@@ -199,14 +213,18 @@ a {
 
 /* === Clear Button === */
 .clear-btn {
-  background-color: #ef4444; /* red */
+  background-color: #ef4444;
+  /* red */
   color: #fff;
   font-weight: 500;
 }
+
 .clear-btn:hover {
-  background-color: #dc2626; /* darker red */
+  background-color: #dc2626;
+  /* darker red */
   transform: scale(1.05);
 }
+
 .clear-btn svg {
   width: 16px;
   height: 16px;
@@ -241,7 +259,7 @@ a {
   align-items: center;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 10px;
   gap: 15px;
 }
@@ -266,6 +284,7 @@ a {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .remove-item-btn:hover {
   background: #dc2626;
 }
@@ -275,7 +294,7 @@ a {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .checkout-summary h2 {
@@ -296,6 +315,7 @@ a {
   margin-top: 10px;
   cursor: pointer;
 }
+
 .checkout-btn:hover {
   background: #16a34a;
 }
@@ -310,6 +330,7 @@ a {
   margin-top: 10px;
   cursor: pointer;
 }
+
 .clear-cart-btn:hover {
   background: #dc2626;
 }
@@ -320,6 +341,7 @@ a {
   color: #3b82f6;
   font-weight: 500;
 }
+
 .continue-shopping-link:hover {
   text-decoration: underline;
 }
@@ -330,7 +352,7 @@ a {
   padding: 60px 20px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .empty-cart h2 {
@@ -349,9 +371,11 @@ a {
   border-radius: 8px;
   font-weight: 500;
 }
+
 .continue-shopping-btn:hover {
   background: #2563eb;
 }
+
 /* Make link buttons look same as icon buttons */
 .icon-link {
   display: inline-flex;
@@ -361,23 +385,28 @@ a {
   height: 35px;
   border-radius: 50%;
   border: none;
-  text-decoration: none; /* removes underline */
+  text-decoration: none;
+  /* removes underline */
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
   font-size: 18px;
 }
 
 .icon-link.view {
-  background-color: #3b82f6; /* blue like details */
+  background-color: #3b82f6;
+  /* blue like details */
   color: white;
 }
 
 .icon-link:hover {
   transform: scale(1.1);
-  background-color: #2563eb; /* darker blue */
+  background-color: #2563eb;
+  /* darker blue */
 }
+
 .footer {
-  background: #6b4f4f; /* same as navbar for consistency */
+  background: #6b4f4f;
+  /* same as navbar for consistency */
   color: white;
   text-align: center;
   padding: 20px;
@@ -386,7 +415,8 @@ a {
 }
 
 .nav-checkout {
-  margin-left: auto;   /* forces checkout all the way right */
+  margin-left: auto;
+  /* forces checkout all the way right */
   display: flex;
   align-items: center;
 }
@@ -395,6 +425,7 @@ a {
   width: 28px;
   height: 28px;
 }
+
 /* Loading Spinner Styles */
 .loading-overlay {
   position: fixed;
@@ -434,8 +465,13 @@ a {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Smooth page transitions */
@@ -449,6 +485,7 @@ a {
     opacity: 1;
   }
 }
+
 /* ---- small additions: navbar search + icon + filter drawer ---- */
 
 .navbar-search {
@@ -466,34 +503,43 @@ a {
   justify-content: center;
   border-radius: 8px;
   border: none;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   color: white;
   cursor: pointer;
   transition: transform .12s ease, background .12s ease;
 }
-.icon-btn:hover { transform: scale(1.05); background: rgba(255,255,255,0.12); }
+
+.icon-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+}
 
 /* filter drawer overlay and panel */
 .filter-drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 1500;
   display: flex;
-  justify-content: flex-start; /* slide from left */
+  justify-content: flex-start;
+  /* slide from left */
 }
+
 .filter-drawer {
   width: min(360px, 92%);
   height: 100%;
   background: #fff;
   padding: 16px;
   overflow-y: auto;
-  box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
   z-index: 1501;
 }
 
 /* smaller search button / inputs across app */
-button, .filter-btn, .clear-btn, .search-btn {
+button,
+.filter-btn,
+.clear-btn,
+.search-btn {
   padding: 6px 10px;
   font-size: 0.9rem;
   border-radius: 6px;
@@ -509,5 +555,275 @@ button, .filter-btn, .clear-btn, .search-btn {
 
 /* responsive: hide large search in navbar on small screens */
 @media (max-width: 768px) {
-  .navbar-search { display: none; } /* mobile: hide large search (drawer/filter will handle mobile) */
+  .navbar-search {
+    display: none;
+  }
+
+  /* mobile: hide large search (drawer/filter will handle mobile) */
+}
+
+/* === Filter Panel Styles === */
+.filter-panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.filter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #1a1a1a;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-search-group {
+  margin-top: 16px;
+}
+
+.filter-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.filter-input,
+.filter-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  border-color: #ffcc00;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+}
+
+.filter-input::placeholder {
+  color: #9ca3af;
+}
+
+.price-range-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.price-range-inputs .filter-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* === Enhanced Filter & Clear Buttons === */
+.filter-btn,
+.clear-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.filter-btn {
+  background: linear-gradient(135deg, #ffcc00, #ff9500);
+  color: #1a1a1a;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+}
+
+.clear-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.clear-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.filter-btn svg,
+.clear-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* === Filter Drawer Improvements === */
+.filter-drawer {
+  width: min(380px, 92%);
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  z-index: 1501;
+}
+
+.filter-drawer .filter-panel {
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* Icon button dark variant for the drawer close button */
+.filter-drawer .icon-btn,
+.icon-btn-dark {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  background: #f3f4f6;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.filter-drawer .icon-btn:hover,
+.icon-btn-dark:hover {
+  transform: scale(1.05);
+  background: #e5e7eb;
+}
+
+/* === Search Button Styles === */
+.search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #ff6600, #ff8c00);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+/* Mobile responsive filter */
+@media (max-width: 640px) {
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .filter-btn,
+  .clear-btn {
+    width: 100%;
+  }
+}
+
+/* === Navbar Links === */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* === Homepage Styles === */
+.homepage {
+  padding: 24px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+}
+
+/* === Search Form Styles === */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-input {
+  padding: 10px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  min-width: 200px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #ffcc00;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* === Filter Drawer Header === */
+.filter-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filter-drawer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
 }
