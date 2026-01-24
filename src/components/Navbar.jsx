@@ -35,7 +35,7 @@ function Navbar({ cartCount = 0 }) {
       </div>
 
       {/* RIGHT: Links + cart (unchanged layout) */}
-      <div className="flex gap-4 items-center">
+      <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/create">Create Listing</Link>
 
