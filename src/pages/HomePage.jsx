@@ -19,7 +19,7 @@ function HomePage() {
         const norm = data.map((i) => ({ ...i, inCart: false }));
         setItems(norm);
         setFilteredItems(norm);
-        setCategories(["All", ...Array.from(new Set(data.map((i) => i.category || "Uncategorized")) )]);
+        setCategories(["All", ...Array.from(new Set(data.map((i) => i.category || "Uncategorized")))]);
       })
       .catch((err) => console.error("Error fetching items:", err));
   }, []);
@@ -58,8 +58,8 @@ function HomePage() {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Available Listings</h1>
+    <div className="homepage">
+      <h1 className="page-title">Available Listings</h1>
 
       {/* Filter drawer toggled from Navbar */}
       <FilterDrawer items={items} categories={categories} onFilter={handleFilterApply} />
