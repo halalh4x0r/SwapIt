@@ -4,7 +4,7 @@ import Filter from "./Filter";
 import { useSearchFilter } from "../context/SearchFilterContext";
 import "../App.css";
 
-export default function FilterDrawer({ items = [], categories = [], onFilter = () => {} }) {
+export default function FilterDrawer({ items = [], categories = [], onFilter = () => { } }) {
   const { isFilterOpen, setIsFilterOpen } = useSearchFilter();
 
   if (!isFilterOpen) return null;
@@ -17,8 +17,8 @@ export default function FilterDrawer({ items = [], categories = [], onFilter = (
   return (
     <div className="filter-drawer-overlay" onClick={() => setIsFilterOpen(false)}>
       <aside className="filter-drawer" onClick={(e) => e.stopPropagation()}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-          <h3 style={{ margin: 0 }}>Filters</h3>
+        <div className="filter-drawer-header">
+          <h3 className="filter-drawer-title">Filters</h3>
           <button className="icon-btn" onClick={() => setIsFilterOpen(false)} aria-label="Close filters">✕</button>
         </div>
 
